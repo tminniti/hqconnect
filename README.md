@@ -9,5 +9,3 @@ available to another Linux OS, feel free.
 I wrote this up because I was at a public library that had a bunch of access points to 
 the same network with the same ESSID. My computer (or dhclient i guess) would connect 
 to a pretty bad one that would drop out all the time.
-
-I'm definitely not a professional, so be nice.
