@@ -7,6 +7,7 @@ ifconfig wlan0 down
 killall wpa_supplicant
 dhclient -r
 re='^[0-9]+$'
+mydir="$(dirname "$(readlink -f "$0")")"
 echo
 
 while true; do
@@ -21,7 +22,7 @@ while true; do
     dhclient -r
     ifconfig wlan0 up
     sudo iwlist wlan0 scan > tempfilebabyyy
-    access_point="$(python ~/.wifi/best_ap.py tempfilebabyyy $desired_essid)"
+    access_point="$(python $mydir/best_ap.py tempfilebabyyy $desired_essid)"
     rm tempfilebabyyy 
     echo 
     iwconfig wlan0 essid "$desired_essid" ap "$access_point"
